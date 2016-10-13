@@ -39,5 +39,27 @@ public int[][] Map = new int[HEIGHT*WIDTH][WIDTH*HEIGHT];
 		}
 	}
 	
+	public int checkGanador(String player){//el problema esque solo compruebo la 1º linea y no sé como comprovar toooda la tabla shiet
+		int idCount;
+		
+		int Count = 0;
+		
+		if (player.equals("Red Player")) {
+			idCount=1;
+		}else{
+			idCount=2;
+		}
+		for (int i = 0; i < Map.length; i++) {
+			if (Map[1][i] ==idCount) {
+				Count+=1;
+			}
+		if (Count == 4) {
+			return 1;
+
+			}
+		}
+		return 0;
+	}
+	
 	
 }

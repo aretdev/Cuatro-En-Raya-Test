@@ -21,7 +21,7 @@ private Map map = new Map();
 		
 		while (true) {
 			
-			if(Turno != 8){
+			if(Turno != 16){
 				if(Turno%2 != 0){
 					System.out.println("Turno del jugador " + RedPlayer.getPlayer());
 					int NumberPos = sc.nextInt();
@@ -31,6 +31,10 @@ private Map map = new Map();
 						map.addPos(NumberPos, RedPlayer.getPlayer());
 						map.printMap();
 						Turno+=1;
+						if (map.checkGanador(RedPlayer.getPlayer()) == 1) {
+							System.out.println("Ganador");
+							break;
+						}
 					}
 					
 				}else{
@@ -43,7 +47,12 @@ private Map map = new Map();
 						map.addPos(NumberPos, BluePlayer.getPlayer());
 						map.printMap();
 						Turno+=1;
+						if (map.checkGanador(BluePlayer.getPlayer()) == 1) {
+							System.out.println("Ganador");
+							break;
+						}
 					}
+				
 				}
 				
 			}else{
